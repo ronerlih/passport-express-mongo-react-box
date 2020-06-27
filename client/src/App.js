@@ -6,22 +6,22 @@ import Signup from "./pages/Signup";
 import "./App.css";
 
 function App() {
-	const PrivateRoute = ({ component: Component, state }) => <Route render={(props) => (state.authenticated === true ? <Component {...props} /> : state.loading === true ? <div></div> : <Redirect to="/" />)} />;
-
+  
   const [authenticated, setAuthenticated] = useState(false);
-  const handleAuth = (bool) => {
-    setAuthenticated(bool)
-  }
-	return (
+  const [loading, setLoading] = useState(false);
+  
+	const ProtectedRoute = ({ component: Component, state }) => <Route render={(props) => (authenticated === true ? <Component {...props} /> : loading === true ? <div></div> : <Redirect to="/" />)} />;
+  
+  return (
 		<div>
 			<Router>
 				<Switch>
           
-					<Route exact path="/" render={(props) => <Login {...props} authenticated={authenticated} setAuthenticated={setAuthenticated} />} />
+					<Route exact path="/" render={(props) => <Login {...props} authenticated={authenticated} setAuthenticated={setAuthenticated} setLoading={setLoading} />} />
 
-					<Route exact path="/home" component={Home} />
+					<ProtectedRoute exact path="/home" component={Home} />
 
-					<Route exact path="/login" render={(props) => <Login {...props} authenticated={authenticated} setAuthenticated={setAuthenticated} />} />
+					<Route exact path="/login" render={(props) => <Login {...props} authenticated={authenticated} setAuthenticated={setAuthenticated} setLoading={setLoading} />} />
 
 					<Route exact path="/signup" component={Signup} />
 				</Switch>
