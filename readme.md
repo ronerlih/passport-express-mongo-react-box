@@ -1,4 +1,5 @@
 [![Coverage Status](https://coveralls.io/repos/github/ronerlih/passport-express-mongo-react-box/badge.svg?branch=master)](https://coveralls.io/github/ronerlih/passport-express-mongo-react-box?branch=master)
+[![Build Status](https://api.travis-ci.com/ronerlih/passport-express-mongo-react-box.svg?branch=master)](https://coveralls.io/github/ronerlih/passport-express-mongo-react-box?branch=master)
 
 ## Readme.. TBD
 

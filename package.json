@@ -19,7 +19,7 @@
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build",
-    "coveralls": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls"
+    "coveralls": "if-env NODE_ENV=test && jest --coverage && cat ./tests/coverage/lcov.info | coveralls"
   },
   "author": "",
   "license": "ISC",
