@@ -6,5 +6,6 @@ module.exports = function (error, req, res, next) {
     }
     console.log('error will be sent');
     res.status(500)
+    console.log(error)
     res.send(error.toString())
   }

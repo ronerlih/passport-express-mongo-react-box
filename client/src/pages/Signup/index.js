@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-import userAPI from "../utils/userAPI";
+import { user as userAPI} from "../../utils/API";
 import {  Redirect } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid";
-import { Input, FormBtn } from "../components/Form";
+import { Col, Row, Container } from "../../components/Grid";
+import { Input, FormBtn } from "../../components/Form";
 
 class Signup extends Component {
   state = {
