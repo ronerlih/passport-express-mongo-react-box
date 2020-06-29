@@ -10,7 +10,7 @@
     ]
   },
   "scripts": {
-    "test": "if-env NODE_ENV=production &&  jest || jest --coverage && coveralls < coverage/lcov.info",
+    "test": "jest",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": " node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
