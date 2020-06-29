@@ -10,7 +10,7 @@
     ]
   },
   "scripts": {
-    "test": "jest --coverage && coveralls < coverage/lcov.info",
+    "test": "if-env NODE_ENV=development && jest --coverage && coveralls < coverage/lcov.info || jest",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": " node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
@@ -19,7 +19,8 @@
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build",
-    "coveralls": "if-env NODE_ENV=test && jest --coverage && cat ./tests/coverage/lcov.info | coveralls"
+    "coveralls": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls"
+
   },
   "author": "",
   "license": "ISC",
