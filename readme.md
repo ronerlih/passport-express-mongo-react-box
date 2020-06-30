@@ -1,5 +1,5 @@
 [![Coverage Status](https://coveralls.io/repos/github/ronerlih/passport-express-mongo-react-box/badge.svg?branch=master)](https://coveralls.io/github/ronerlih/passport-express-mongo-react-box?branch=master)
-[![Build Status](https://api.travis-ci.com/ronerlih/passport-express-mongo-react-box.svg?branch=master)]()
+[![Build Status](https://travis-ci.com/ronerlih/passport-express-mongo-react-box.svg?branch=master)](https://travis-ci.com/ronerlih/passport-express-mongo-react-box)
 
 ## Readme.. TBD
 
@@ -24,7 +24,10 @@
   * coverall specs 
 
   * travis
+https://docs.travis-ci.com/user/environment-variables/#defining-variables-in-repository-settings
 
+* heroku 
+   
   * tests using jest client and express
 
   * folder structure
