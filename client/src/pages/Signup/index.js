@@ -89,9 +89,7 @@ class Signup extends Component {
           
         </Row>
         {/* redirect on authenticated */}
-        {this.props.authenticated ? <Redirect to='/books'/>: <div></div>}
-
-
+        {this.props.user && this.props.user._id ? <Redirect to='/home'/>: <div></div>}
       </Container>
     );
   }

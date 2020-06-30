@@ -25,7 +25,7 @@ function App() {
 					<Route
 						exact
 						path='/'
-						render={props => (
+						render={ props => (
 							<Login
 								{...{ user, setUser, setLoading }} 
 								{...props}

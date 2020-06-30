@@ -6,7 +6,6 @@ const ProtectedRoute = ({ Component, loading, user }) => {
    return(
       <Route
           render={ () => {
-
             return (user && user._id )
               ? <Component {...{user}} />
               : loading === true 
