@@ -33,3 +33,24 @@ https://docs.travis-ci.com/user/environment-variables/#defining-variables-in-rep
   * folder structure
 
   * env vars (session pass)
+
+  * coveralls
+    * will show coverage report of both client tests and server tests (they run seperatly).
+
+  * Tests
+   * Jest, client and express.
+   * api routes with Supertest.
+   * coverage reports with coveralls.
+
+   * Run tests:
+    * on express server
+      * ```javascript
+      npm run test 
+      ```
+      * with run with cover report: 
+      ```javascript
+      npm run coveralls
+      ```
+      * 
+### continues integration
+   * tests are run by travis from the `.travis.yml` file.
