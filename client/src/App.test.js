@@ -6,6 +6,6 @@ describe('React app tests: root component', () => {
 	test('renders a Navbar', () => {
 		const { getByText } = render(<App />);
 		const linkElement = getByText(/Navbar/i);
-		expect(linkElemewnt).toBeInTheDocument();
+		expect(linkElement).toBeInTheDocument();
 	});
 });
