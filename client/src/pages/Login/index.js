@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { user as userAPI} from '../../utils/API';
+import { user as userAPI } from '../../utils/API';
 import { Redirect } from 'react-router-dom';
 import { Col, Row, Container } from '../../components/Grid';
 import { Input, FormBtn } from '../../components/Form';
 import Card from '../../components/Card';
+import styles from './style.module.css';
 
 class Login extends Component {
 	constructor(props) {
@@ -17,7 +18,7 @@ class Login extends Component {
 	handleInputChange = event => {
 		const { name, value } = event.target;
 		this.setState({
-			[name]: value
+			[name]: value.trim()
 		});
 	};
 
@@ -36,17 +37,16 @@ class Login extends Component {
 				})
 				.then(res => {
 					if (res.status === 200) {
-						console.log(res.status)
+						console.log(res.status);
 						this.props.setLoading(false);
 						this.props.setUser(res.data);
 					}
 				})
 				.catch(err => {
 					this.props.setLoading(false);
-					
-					console.warn(err.response.data)
-					this.props.setAlertInfo({ 
-						theme:"warning",
+					console.warn(err.response.data);
+					this.props.setAlertInfo({
+						theme: 'warning',
 						message: err.response.data
 					});
 				});
@@ -59,7 +59,7 @@ class Login extends Component {
 				<Row>
 					<Col size='12'>
 						<Card title='Login'>
-							<form>
+							<form className={styles.form} onSubmit={this.handleFormSubmit}>
 								<Input
 									value={this.state.email}
 									onChange={this.handleInputChange}

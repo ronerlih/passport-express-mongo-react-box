@@ -3,7 +3,7 @@ import style from "./style.module.css";
 
 const Card = ({ title, children }) => {
    return(
-   <div className={`${style.card} text-center ` } >
+   <div className={`${style.card} text-center ` }  >
       <div className={style.title}>
          {title}
       </div>

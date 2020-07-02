@@ -48,7 +48,10 @@ module.exports = {
 
       // redirect to login
       .then(() => res.redirect(307, '/api/user/login'))
-      .catch(err => res.status(401).json(err));
+      .catch(err => {
+         console.log(err.message)
+         res.status(401).json(err.message)
+      });
    },
       
    signout: (req, res) => {

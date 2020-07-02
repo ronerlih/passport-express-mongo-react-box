@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import ProtectedRoute from './components/ProtectedRoute';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import NoMatch from './pages/NoMatch';
-import Navbar from './containers/Navbar';
 import Alert from './components/Alert';
-import { user as userAPI } from "./utils/API"
+import Navbar from './containers/Navbar';
+import LoadingSpinner from './components/LoadingSpinner';
+import ProtectedRoute from './components/ProtectedRoute';
+import { user as userAPI } from "./utils/API";
 import './App.css';
 
 function App() {
@@ -28,14 +29,15 @@ function App() {
 				<Route render={ props => 
 					<Navbar user={user} setUser={setUser} {...props} />
 				} />
+				<LoadingSpinner isLoading={loading} />
 				<Switch>
 					<Route
 						exact
 						path='/'
 						render={ props => (
 							<Login
-								{...{ user, setUser, setLoading, setAlertInfo }} 
 								{...props}
+								{...{ user, setUser, setLoading, setAlertInfo }} 
 							/>
 						)}
 					/>
@@ -43,14 +45,28 @@ function App() {
 						path='/login'
 						render={ () => <Redirect to="/" />}
 					/>
-					<Route exact path='/signup' component={Signup} {...user} loading={loading} />
+					<Route 
+						exact 
+						path='/signup' 
+						render={ props => 
+							<Signup
+								{...props}
+								user={user}
+								setUser={setUser}
+								setLoading={setLoading} 
+								setAlertInfo={setAlertInfo}
+							/>
+						}
+						{...{ user, setUser, setLoading, setAlertInfo }} />
 					<ProtectedRoute exact path="/home" {...{user, loading, Component: Home} } />
 					<Route component={NoMatch} />
 				</Switch>
 			</Router>
 			{ alertInfo.message 
 				? <Alert alertInfo={alertInfo} setAlertInfo={setAlertInfo} />
-				: <></> }
+				: <></>
+			}
+			
 		</>
 	);
 }
