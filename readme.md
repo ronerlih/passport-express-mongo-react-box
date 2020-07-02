@@ -94,7 +94,8 @@ url tbd.
 ### continues integration
    * tests are run by travis from the `.travis.yml` file.
 
-### Recommended further development :
-  * [Production best practices wit hexpress](https://expressjs.com/en/advanced/best-practice-performance.html)
+### Recommended next steps :
+
+  * [Production best practices with Express.js](https://expressjs.com/en/advanced/best-practice-performance.html)
 
 
