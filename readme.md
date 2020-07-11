@@ -36,17 +36,15 @@ https://columbia.bootcampcontent.com/columbia-bootcamp/cu-nyc-fsf-pt-01-2020-u-c
 <hr />
 
 **Run Locally**
-  1. clone/fork the repo or copy from the Gitlab folder.
+  1. clone/fork the repo or copy from the Gitlab folder (if copied remove node_modules folder, & client/node_modules).
   2. create a git repo and add the project to it.
   2. `cd` into the root folder.
-  3. create a `.env` file with a DB_NAME and DB_PASS variables:
-  <img src='_/env.png' style="max-width:300px" />
   4. run `npm i`
-  5. create you local database, from workbench or any sql client: `CREATE DATABASE your-data-base-name`
   5. run `npm start` and 🤞
+
 **Deploy to heroku**
   1. run from the root folder `heroku create your-app-name`
-  2. Add JAWS_DB addon (from the heroku app dashboard).
+  2. Add mLAB addon (from the heroku app dashboard).
   4. add env vars on heroku app dashboard: SESSION_PASS (with any string).
   3. Add repo to travis-ci.com
   3. Add repo to coveralls.io
