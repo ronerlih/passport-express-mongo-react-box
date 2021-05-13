@@ -11,7 +11,7 @@
  * react tests + coveralls
 
 ### Demo
-<img src='_/flow-gif.gif' style="max-width:300px" />
+<img src='_/user-flow.gif' style="max-width:300px" />
 
 ### ⚙️ Installation
 
